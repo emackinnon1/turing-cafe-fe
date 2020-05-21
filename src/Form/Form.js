@@ -20,7 +20,6 @@ class Form extends Component {
 			date: this.state.date,
 			time: this.state.time,
 			number: Number(this.state.number),
-			id: this.props.idNumber,
 		};
 		this.props.addReservation(newRes);
 	};
