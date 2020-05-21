@@ -19,7 +19,8 @@ class Form extends Component {
 			name: this.state.name,
 			date: this.state.date,
 			time: this.state.time,
-			number: this.state.number,
+			number: Number(this.state.number),
+			id: this.props.idNumber,
 		};
 		this.props.addReservation(newRes);
 	};
@@ -60,7 +61,7 @@ class Form extends Component {
 				/>
 
 				<button onClick={this.submitReservation} type="button">
-					SUBMIT
+					MAKE RESERVATION
 				</button>
 			</form>
 		);
