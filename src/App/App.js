@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 
-import { getReservations } from "../apiCalls";
+import { getReservations, postReservation } from "../apiCalls";
 import Reservations from "../Reservations/Reservations";
 import Form from "../Form/Form";
 
@@ -21,6 +21,7 @@ class App extends Component {
 
 	addReservation = (reservation) => {
 		this.setState({ reservations: [...this.state.reservations, reservation] });
+		postReservation("http://localhost:3001/api/v1/reservations", reservation);
 	};
 
 	render() {
