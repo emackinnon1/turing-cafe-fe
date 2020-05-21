@@ -20,9 +20,7 @@ describe("Form", () => {
 		});
 
 		it("should change value when data is put into the form", () => {
-			const { getByPlaceholderText, getByDisplayValue, debug } = render(
-				<Form />
-			);
+			const { getByPlaceholderText, getByDisplayValue } = render(<Form />);
 
 			const nameInput = getByPlaceholderText("Name");
 
