@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 
 import { getReservations } from "../apiCalls";
+import Reservations from "../Reservations/Reservations";
 
 class App extends Component {
 	state = {
@@ -12,19 +13,19 @@ class App extends Component {
 		let fetchedReservations = await getReservations(
 			"http://localhost:3001/api/v1/reservations"
 		);
-		console.log(fetchedReservations);
 		this.setState({
 			reservations: [...this.state.reservations, ...fetchedReservations],
 		});
 	};
 
 	render() {
-		console.log(this.state);
 		return (
 			<div className="App">
 				<h1 className="app-title">Turing Cafe Reservations</h1>
 				<div className="resy-form"></div>
-				<div className="resy-container"></div>
+				<div className="resy-container">
+					<Reservations reservations={this.state.reservations} />
+				</div>
 			</div>
 		);
 	}
